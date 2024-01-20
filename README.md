@@ -1,52 +1,77 @@
-# Chatbot Deployment with Flask and JavaScript
+# Implantação de chatbot com Flask e JavaScript
 
-In this tutorial we deploy the chatbot I created in [this](https://github.com/python-engineer/pytorch-chatbot) tutorial with Flask and JavaScript.
+Neste tutorial foi implantado o chatbot criado [neste](https://github.com/python-engineer/pytorch-chatbot) tutorial com Flask e JavaScript.
 
-This gives 2 deployment options:
-- Deploy within Flask app with jinja2 template
-- Serve only the Flask prediction API. The used html and javascript files can be included in any Frontend application (with only a slight modification) and can run completely separate from the Flask App then.
+Isso oferece 2 opções de implantação:
 
-## Initial Setup:
-This repo currently contains the starter files.
+- Implante no aplicativo Flask com modelo jinja2
+- Servir apenas a API de previsão do Flask. Os arquivos html e javascript usados ​​podem ser incluídos em qualquer aplicativo Frontend (com apenas uma ligeira modificação) e podem ser executados completamente separados do aplicativo Flask.
 
-Clone repo and create a virtual environment
+## Configuração inicial - no windows:
+Este repositório contém atualmente os arquivos iniciais.
+
+**Clone o Repositório e crie um ambiente virtual**
+
+a) Clonando o repositório
+b) Mudando para o repositório clonado
+c) Criar um ambiente virtual usando o módulo venv
+d) Ativando o ambiente virtual
 ```
-$ git clone https://github.com/python-engineer/chatbot-deployment.git
-$ cd chatbot-deployment
-$ python3 -m venv venv
-$ . venv/bin/activate
+git clone https://github.com/python-engineer/chatbot-deployment.git
+cd chatbot-deployment
+python -m venv venv
+venv\Scripts\activate
 ```
-Install dependencies
+
+Erro: [] O erro que você está enfrentando está relacionado à política de execução do PowerShell no Windows.
 ```
-$ (venv) pip install Flask torch torchvision nltk
+Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned
 ```
-Install nltk package
+
+Depois de concluir suas tarefas no ambiente virtual, você pode restaurar a política de execução para o valor original usando o comando:
+``` Set-ExecutionPolicy <Restricted> ```
+
+
+**Instalar dependências**
 ```
-$ (venv) python
+(venv) pip install Flask torch torchvision nltk
+```
+Erro: [] resolvido executando o comando que o proprio terminal deu ```python.exe -m pip install --upgrade pip```
+
+**Instale o pacote nltk**
+```
+(venv) python
 >>> import nltk
 >>> nltk.download('punkt')
 ```
-Modify `intents.json` with different intents and responses for your Chatbot
 
-Run
+Erro: [] (venv) ```pip install nltk```
+Depois pude voltar a instalar os comandos acimas dentro do ambiente python:
+
+
+**Modifique `intents.json` com diferentes intenções e respostas para o seu Chatbot**
+
+Rodar
 ```
 $ (venv) python train.py
 ```
-This will dump data.pth file. And then run
-the following command to test it in the console.
+
+Erro[] precisava instalar a biblioteca do numPy ```pip install numpy``` e a do torch 
+
+Isso irá despejar o arquivo data.pth. E então execute o seguinte comando para testá-lo no console.
 ```
 $ (venv) python chat.py
 ```
+Agora, para implantação, siga meu tutorial para implementar app.pye app.js.
 
-Now for deployment follow my tutorial to implement `app.py` and `app.js`.
-
-## Watch the Tutorial
+## Assista o tutorial
 [![Alt text](https://img.youtube.com/vi/a37BL0stIuM/hqdefault.jpg)](https://youtu.be/a37BL0stIuM)  
 [https://youtu.be/a37BL0stIuM](https://youtu.be/a37BL0stIuM)
 
-## Note
-In the video we implement the first approach using jinja2 templates within our Flask app. Only slight modifications are needed to run the frontend separately. I put the final frontend code for a standalone frontend application in the [standalone-frontend](/standalone-frontend) folder.
+## Obeservaçao
+No vídeo implementamos a primeira abordagem usando templates jinja2 em nosso aplicativo Flask. Apenas pequenas modificações são necessárias para executar o frontend separadamente. Coloquei o código de front-end final para um aplicativo de front-end independente na pasta standalone-frontend [standalone-frontend](/standalone-frontend).
 
 ## Credits:
-This repo was used for the frontend code:
-https://github.com/hitchcliff/front-end-chatjs
+Este repositório foi usado para o código frontend:https://github.com/thascript/chatbot-deployment
+

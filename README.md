@@ -69,9 +69,9 @@ Agora, para implantação, siga meu tutorial para implementar app.pye app.js.
 [![Alt text](https://img.youtube.com/vi/a37BL0stIuM/hqdefault.jpg)](https://youtu.be/a37BL0stIuM)  
 [https://youtu.be/a37BL0stIuM](https://youtu.be/a37BL0stIuM)
 
-## Obeservaçao
+## Observaçao
 No vídeo implementamos a primeira abordagem usando templates jinja2 em nosso aplicativo Flask. Apenas pequenas modificações são necessárias para executar o frontend separadamente. Coloquei o código de front-end final para um aplicativo de front-end independente na pasta standalone-frontend [standalone-frontend](/standalone-frontend).
 
-## Credits:
+## Creditos:
 Este repositório foi usado para o código frontend:https://github.com/thascript/chatbot-deployment
 

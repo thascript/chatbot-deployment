@@ -59,7 +59,11 @@ $ (venv) python train.py
 
 Erro[] precisava instalar a biblioteca do numPy ```pip install numpy``` e a do torch 
 
+pip3 install --pre torch -f https://download.pytorch.org/whl/nightly/cpu/torch_nightly.html
+
 Isso irá despejar o arquivo data.pth. E então execute o seguinte comando para testá-lo no console.
+
+
 ```
 $ (venv) python chat.py
 ```
